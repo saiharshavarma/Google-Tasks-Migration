@@ -1,4 +1,4 @@
-# Google Tasks Migration (Account 1 work -> Account 2 personal)
+# Google Tasks Migration (Account 1 -> Account 2)
 
 This script copies Google Tasks from one Google account to another.
 
@@ -15,7 +15,7 @@ It does NOT delete anything in the source account. It only reads from Account 1 
 ## What you need
 
 - Python 3.9+ installed
-- Access to both Google accounts (Account 1 work and Account 2 personal)
+- Access to both Google accounts (Account 1 and Account 2)
 - A Google Cloud project with:
   - Google Tasks API enabled
   - OAuth configured (Desktop app client)
@@ -68,8 +68,8 @@ python transfer_tasks.py
 
 You will authorize twice:
 
-1. SOURCE login: sign in with Account 1 (work) and allow access
-2. DEST login: sign in with Account 2 (personal) and allow access
+1. SOURCE login: sign in with Account 1 and allow access
+2. DEST login: sign in with Account 2 and allow access
 
 After it finishes, verify in:
 
@@ -98,7 +98,7 @@ If you previously ran a version that failed mid-way
 
 If you already have a partially copied list in Account 2 and you want a clean run:
 
-1. In Account 2 (tasks.google.com), delete the partial list (example: [From Work] My Tasks)
+1. In Account 2 (tasks.google.com), delete the partial list (example: [From Account 1] My Tasks)
 2. In your script folder, delete:
    - checkpoint_copied_task_ids.json (if present)
 3. Run the script again.
